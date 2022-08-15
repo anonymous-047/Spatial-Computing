@@ -263,6 +263,17 @@ def all_bandpass2(array_order):
     array_re = np.array(list_re)
     return array_re
 
+def move_duplicate_set(list_tar):
+    return[list(item) for item in set(tuple(row) for row in list_tar)]
+
+
+def get_intersection_list(list1,list2):
+    set1 = set(tuple(item) for item in list1)
+    set2 = set(tuple(item) for item in list2)
+
+    intersection = set1&set2
+    return[list(item) for item in intersection]
+
 """Create list forward"""
 
 def remain(all_list,list_tar):
