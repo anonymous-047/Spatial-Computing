@@ -165,18 +165,41 @@ def or_operation_for3_v2(array_tar,result_1_or): # original, create square matri
 
 gate5 = np.load('all gate.npy')
 
-re1 = or_operation_for2_v6(gate5,1)
-re2 = or_operation_for2_v6(gate5,2)
-re3 = or_operation_for2_v6(gate5,3)
-re4 = or_operation_for2_v6(gate5,4)
-re5 = or_operation_for2_v6(gate5,5)
+# re1 = or_operation_for2_v6(gate5,1)
+# re2 = or_operation_for2_v6(gate5,2)
+# re3 = or_operation_for2_v6(gate5,3)
+# re4 = or_operation_for2_v6(gate5,4)
+# re5 = or_operation_for2_v6(gate5,5)
 
 
-final = np.hstack((re1,re2,re3,re4,re5))
-final = np.unique(final)
+# final = np.hstack((re1,re2,re3,re4,re5))
+# final = np.unique(final)
 
-print(final.shape)
+# print(final.shape)
 
+import time
+from joblib import Parallel, delayed
+
+def main():
+    start1 = time.time()
+    gate5 = np.load('all gate.npy')
+    # --Parallel version --
+    re_list = \
+        Parallel(n_jobs=5, verbose=0)(
+            delayed(or_operation_for2_v6)(array_tar=gate5, block_n=idx) for idx in range(1, 6))
+    final = np.hstack(re_list)
+    final = np.unique(final)
+    
+
+    with open("results_par.txt",'w',encoding='utf-8') as fh:
+        fh.write(str(final.shape))
+    end1 = time.time()
+    print(f'Wall-clock time is {(end1 - start1):.2f} seconds')
+
+if __name__ == "__main__":
+    main()
+    
+    
 # def or_operation_for2(array_tar): # original, create square matrix
 #     set1 = set()
 #     len1 = array_tar.shape[0]
