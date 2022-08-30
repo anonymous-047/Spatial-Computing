@@ -19,11 +19,14 @@ import copy
 import time
 
 def toint(array_tar):
+    """
+    turn binary into number
+    """
   m,n = array_tar.shape 
   a = 2**np.arange(n)[::-1]  # -1 reverses array of powers of 2 of same length as bits
   return array_tar @ a
 
-def or_operation_for2_v5(array_tar):  # not branched
+def or_operation_for2_v5(array_tar):  # OR operation without branched
     # array_tar = array_tar[0:20000]
     arr_bin = toint(array_tar)
     # print(arr_bin.shape)
@@ -55,7 +58,7 @@ def or_operation_for2_v5(array_tar):  # not branched
 
 def or_operation_for2_v6(array_tar,num_block,ith_block): 
     """
-    5 inputs, branched
+    OR operation with branches
     """
     arr_bin = toint(array_tar)
     len1 = arr_bin.shape[0]
@@ -92,6 +95,46 @@ def or_operation_for2_v6(array_tar,num_block,ith_block):
 
     # resu_array = np.unique(resu_array)
     return resu_array
+
+
+def or_operation_for3_branch(array_tar,result_1_or,ith_block,num_block): # 2 OR with branches
+    """
+    3 OR
+    """
+    arr_bin = toint(array_tar)
+    # print(arr_bin.shape)
+    arr_bin_1 = np.array_split(arr_bin,num_block)[ith_block-1]
+
+    len1 = arr_bin.shape[0]
+    len2 = arr_bin_1.shape[0]
+
+    n = (len1 // 5000) + 1
+    m = (len2 // 5000) + 1
+    arr_bin = arr_bin.reshape(len1, 1)
+    arr_bin_1or = result_1_or.reshape(len2, 1)
+    
+    resu_array = np.array([0])
+    for i in range(m):
+        for j in range(n):
+            l1 = np.array_split(arr_bin_1or, m)[i].shape[0]
+            l2 = np.array_split(arr_bin, n)[j].shape[0]
+
+            array1 = np.full((l1, l2), np.array_split(arr_bin_1or, m)[i])
+            array2 = np.full((l1, l2), np.array_split(arr_bin, n)[j].T)
+            or_re = np.bitwise_or(array1, array2)
+            resu = np.unique(or_re)
+            if resu_array.shape[0] == 1:
+                resu_array = np.hstack((resu_array, resu))
+                resu_array = resu_array[1:]
+
+            else:
+                resu_array = np.hstack((resu_array, resu))
+                resu_array = np.unique(resu_array)
+
+    # resu_array = np.unique(resu_array)
+    return resu_array
+
+ # --------------------------------------------
 """ 80 branches """
 import time
 from joblib import Parallel, delayed
@@ -239,43 +282,6 @@ def or_operation_for3_v2(array_tar,result_1_or): # not branched
     # print(arr_bin.shape)
     len1 = arr_bin.shape[0]
     len2 = result_1_or.shape[0]
-
-    n = (len1 // 5000) + 1
-    m = (len2 // 5000) + 1
-    arr_bin = arr_bin.reshape(len1, 1)
-    arr_bin_1or = result_1_or.reshape(len2, 1)
-    
-    resu_array = np.array([0])
-    for i in range(m):
-        for j in range(n):
-            l1 = np.array_split(arr_bin_1or, m)[i].shape[0]
-            l2 = np.array_split(arr_bin, n)[j].shape[0]
-
-            array1 = np.full((l1, l2), np.array_split(arr_bin_1or, m)[i])
-            array2 = np.full((l1, l2), np.array_split(arr_bin, n)[j].T)
-            or_re = np.bitwise_or(array1, array2)
-            resu = np.unique(or_re)
-            if resu_array.shape[0] == 1:
-                resu_array = np.hstack((resu_array, resu))
-                resu_array = resu_array[1:]
-
-            else:
-                resu_array = np.hstack((resu_array, resu))
-                resu_array = np.unique(resu_array)
-
-    # resu_array = np.unique(resu_array)
-    return resu_array
-
-def or_operation_for3_branch(array_tar,result_1_or,ith_block,num_block): #  branched
-    """
-    3 OR
-    """
-    arr_bin = toint(array_tar)
-    # print(arr_bin.shape)
-    arr_bin_1 = np.array_split(arr_bin,num_block)[ith_block-1]
-
-    len1 = arr_bin.shape[0]
-    len2 = arr_bin_1.shape[0]
 
     n = (len1 // 5000) + 1
     m = (len2 // 5000) + 1
