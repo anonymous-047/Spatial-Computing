@@ -53,7 +53,10 @@ def or_operation_for2_v5(array_tar):  # not branched
     # resu_array = np.unique(resu_array)
     return resu_array
 
-def or_operation_for2_v6(array_tar,num_block,ith_block): # 5 inputs, branched
+def or_operation_for2_v6(array_tar,num_block,ith_block): 
+    """
+    5 inputs, branched
+    """
     arr_bin = toint(array_tar)
     len1 = arr_bin.shape[0]
     
@@ -89,7 +92,7 @@ def or_operation_for2_v6(array_tar,num_block,ith_block): # 5 inputs, branched
 
     # resu_array = np.unique(resu_array)
     return resu_array
-
+""" 80 branches """
 import time
 from joblib import Parallel, delayed
 
@@ -264,6 +267,9 @@ def or_operation_for3_v2(array_tar,result_1_or): # not branched
     return resu_array
 
 def or_operation_for3_branch(array_tar,result_1_or,ith_block,num_block): #  branched
+    """
+    3 OR
+    """
     arr_bin = toint(array_tar)
     # print(arr_bin.shape)
     arr_bin_1 = np.array_split(arr_bin,num_block)[ith_block-1]
