@@ -463,6 +463,10 @@ np.save('index_all',index_all)
 gate = process_steps_combined(index_all)
 print(gate.shape)
 
+#--------------------------------------
+"""
+4 inputs
+"""
 from queue import Queue
 
 single = ['a', 'b', 'c','d']
@@ -474,7 +478,13 @@ queue_next_item = Queue(maxsize=0)
 
 re = ProducerThread_v2(single)
 
-print(len(re))
+
+po4_1 = produce_position(['a','b','c','d'])
+
+l = add_zero(re) # all possible orders (336)
+index = get_all_index(po4_1,np.array(l)) # all possible index (336,16)
+bdp = process_steps_combined(index) # logic gate after bandpass, inverse bandpass (4034, 16)
+print(bdp.shape)
 
 """
  ## Old version to create orders
