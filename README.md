@@ -13,7 +13,11 @@ activation functions, the code for the generation of orders, the code used to co
 
 ## Generation of orders
 - [Code](automative_order_creating_per_branch+logic_gate.py)
-- Here contains the code used to generate all possible orders.
+- Here contains the code used to generate all possible orders. Using Queue, in each step, generate a dictionary that contains all the possible elements for next step based on the current item.
+- There are two main functions for the generation of orders.
+- 1. Next Possible item generation
+- 2. Filter states
+- 3. Generate by branches
 
 
 
