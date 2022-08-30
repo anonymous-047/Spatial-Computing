@@ -338,49 +338,6 @@ def filter_states(set_tar,current_order):
 
     return set_tar
 
-def generate_orders_v1(single_input_list, input):
-    # to add the next possible states in the dictionary 'move' to the current list
-    single_input = set(single_input_list)
-    if len(input) == 0:
-        input = [[]]
-
-    input1 = [[]]
-    for item in input:
-        move = {0: (single_input - set(item)), 1: all_possible_combined(item)}
-        if len(move[0]) == 0 and len(move[1]) == 0:
-            return [item for item in input if len(item) == (2**(len(single_input))-1)]
-            # return input
-        else:
-            for i in move:
-                for j in move[i]:
-                    new = copy.deepcopy(item)
-                    new.append(j)
-                    input1.append(new)
-
-            input[:] = input1[:]
-            # print(input)
-
-def generate_orders1(single_input_list, input):
-    single_input = set(single_input_list)
-    if len(input) == 0:
-        input = [[]]
-
-    input1 = [['a']] # start with a single input
-
-    for item in input:
-        move = {0: (single_input - set(item)), 1: all_possible_combined(item)}
-        if len(move[0]) == 0 and len(move[1]) == 0:
-            return [item for item in input if len(item) == (2**(len(single_input))-1)]
-            # return input
-        else:
-            for i in move:
-                for j in move[i]:
-                    new = copy.deepcopy(item)
-                    new.append(j)
-                    input1.append(new)
-
-            input[:] = input1[:]
-            # print(input)
 
 def add_zero(list_tar):
     re_array = np.array(list_tar)
@@ -518,4 +475,50 @@ queue_next_item = Queue(maxsize=0)
 re = ProducerThread_v2(single)
 
 print(len(re))
+
+"""
+def generate_orders_v1(single_input_list, input):
+    # to add the next possible states in the dictionary 'move' to the current list
+    single_input = set(single_input_list)
+    if len(input) == 0:
+        input = [[]]
+
+    input1 = [[]]
+    for item in input:
+        move = {0: (single_input - set(item)), 1: all_possible_combined(item)}
+        if len(move[0]) == 0 and len(move[1]) == 0:
+            return [item for item in input if len(item) == (2**(len(single_input))-1)]
+            # return input
+        else:
+            for i in move:
+                for j in move[i]:
+                    new = copy.deepcopy(item)
+                    new.append(j)
+                    input1.append(new)
+
+            input[:] = input1[:]
+            # print(input)
+
+def generate_orders1(single_input_list, input):
+    single_input = set(single_input_list)
+    if len(input) == 0:
+        input = [[]]
+
+    input1 = [['a']] # start with a single input
+
+    for item in input:
+        move = {0: (single_input - set(item)), 1: all_possible_combined(item)}
+        if len(move[0]) == 0 and len(move[1]) == 0:
+            return [item for item in input if len(item) == (2**(len(single_input))-1)]
+            # return input
+        else:
+            for i in move:
+                for j in move[i]:
+                    new = copy.deepcopy(item)
+                    new.append(j)
+                    input1.append(new)
+
+            input[:] = input1[:]
+            # print(input)
+    """
 
