@@ -440,6 +440,9 @@ np.save('order_index_a',index_array)
 print(index_array[0:10])
 
 def ProducerThread_v2(single_input_list):
+    """
+    Use queue to produce all possible orders
+    """
     single_input = set(single_input_list)
     global queue_order
     global queue_next_item
@@ -458,6 +461,9 @@ def ProducerThread_v2(single_input_list):
             # print(list(queue_order.queue))
 
 def produce_position(position1_list):
+    """
+    produce the order based on the input position1_list for mapping
+    """
     position2 = itertools.combinations(position1_list,2)
     position3 = itertools.combinations(position1_list,3)
     position4 = itertools.combinations(position1_list,4)
