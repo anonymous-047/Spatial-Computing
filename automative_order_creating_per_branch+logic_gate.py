@@ -477,6 +477,9 @@ re = ProducerThread_v2(single)
 print(len(re))
 
 """
+ ## Old version to create orders
+
+
 def generate_orders_v1(single_input_list, input):
     # to add the next possible states in the dictionary 'move' to the current list
     single_input = set(single_input_list)
