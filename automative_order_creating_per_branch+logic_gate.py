@@ -486,6 +486,42 @@ index = get_all_index(po4_1,np.array(l)) # all possible index (336,16)
 bdp = process_steps_combined(index) # logic gate after bandpass, inverse bandpass (4034, 16)
 print(bdp.shape)
 
+#----------------------------------------
+""" 
+5 inputs
+"""
+from queue import Queue
+
+single = ['a', 'b', 'c','d','e']
+queue_order = Queue(maxsize=0)
+queue_order.put(['a'])
+queue_next_item = Queue(maxsize=0)
+
+
+
+re = ProducerThread_v2(single) # 13104
+re_array = np.array(re)
+
+re_array = add_zero_array(re_array) # all possible orders starting with 'a'
+
+po1 = produce_position(['a','b','c','d','e'])
+po2 = produce_position(['b','a','c','d','e'])
+po3 = produce_position(['c','b','a','d','e'])
+po4 = produce_position(['d','b','c','a','e'])
+po5 = produce_position(['e','b','c','d','a'])
+
+index_array_a = get_all_index(po1,re_array) # start with a
+index_array_b = get_all_index(po2,re_array) # start with b
+index_array_c = get_all_index(po3,re_array) # start with c
+index_array_d = get_all_index(po4,re_array) # start with d
+index_array_e = get_all_index(po5,re_array) # start with d
+
+index_all = np.vstack((index_array_a,index_array_b,index_array_c,index_array_d,index_array_e)) # all possible index 
+
+
+bdp = process_steps_combined(index_all) # all logic gates after activation function (347752, 32)
+
+#------------------------------------------
 """
  ## Old version to create orders
 
