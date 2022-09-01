@@ -1,7 +1,7 @@
 # Summer-Project
 
 ## Spatial Computing 
-> The aim is to get the least number of outputs to get all the possible logic gates for n inputs. This repository contains the code for 
+> The aim of this project is to get the least number of outputs to get all the possible logic gates for n inputs. This repository contains the code for 
 activation functions, the code for the generation of orders, the code used to compute the OR operation, and some of the results.
 
 ## Table of Contents
