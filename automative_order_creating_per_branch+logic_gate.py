@@ -462,6 +462,29 @@ np.save('index_all',index_all)
 
 gate = process_steps_combined(index_all)
 print(gate.shape)
+# ----
+""" 3 inputs """
+from queue import Queue
+
+single = ['a', 'b', 'c']
+queue_order = Queue(maxsize=0)
+queue_order.put([])
+queue_next_item = Queue(maxsize=0)
+
+
+
+re = ProducerThread_v2(single) 
+re_array = np.array(re)
+
+re_array = add_zero_array(re_array)
+
+po1 = ['0','a','b','c','ab','ac','bc','abc']
+
+
+index_array = get_all_index(po1,re_array) 
+
+
+bdp = process_steps_combined(index_array) 
 
 #--------------------------------------
 """
