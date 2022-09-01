@@ -50,10 +50,10 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 
 
 ## Result data
-- [3 inputs 1 output logic result]()
-- [4 inputs 1 output logic result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4inputs_1output_gate.npy)
-- [4 inputs 2 outputs int result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4%20input%201%20or%20int%20result.npy)
-- [4 inputs 3 outputs int result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4%20input%202%20or%20int%20result.npy)
+- [3 inputs 1 output logic result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/d040073ca119ac057f7bebdf5d111b9d1ba9c7f6/Result/3%20inputs%201%20output%20logical%20result.npy)
+- [4 inputs 1 output logic result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/d040073ca119ac057f7bebdf5d111b9d1ba9c7f6/Result/4inputs_1output_gate.npy)
+- [4 inputs 2 outputs int result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/d040073ca119ac057f7bebdf5d111b9d1ba9c7f6/Result/4%20input%201%20or%20int%20result.npy)
+- [4 inputs 3 outputs int result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/d040073ca119ac057f7bebdf5d111b9d1ba9c7f6/Result/4%20input%202%20or%20int%20result.npy)
 - [5 inputs 1 output logic result](https://drive.google.com/file/d/1gC_lEHDxMGpLRobRxAUgQKVWXsBEIEtQ/view?usp=sharing)
 
 
