@@ -41,9 +41,11 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 ## OR operation
 - [Code](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/OR/or%20operation.py)
 - Here contains the code used to do the OR operation.
+- * Turn logic gate into int number
+- * Use bitwise_or instead of logical_or
 - * Use numpy.array operation instead of ‘for loop’
-- * Split the data into chunks to avoid running out of memory.
-- * Run the program in several branches in parallel to save time.
+- * Split the data into chunks to avoid running out of memory
+- * Run the program in several branches in parallel to save time
 
 
 
@@ -51,12 +53,8 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 - [4 inputs 1 output logic result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4inputs_1output_gate.npy)
 - [4 inputs 2 outputs int result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4%20input%201%20or%20int%20result.npy)
 - [4 inputs 3 outputs int result](https://github.com/Enbo-Lyu/Summer-Project/blob/f590c1fcdd129b6fb164b8d757c827484f2df729/4%20inputs/4%20input%202%20or%20int%20result.npy)
+- [5 inputs 1 output logic result](https://drive.google.com/file/d/1gC_lEHDxMGpLRobRxAUgQKVWXsBEIEtQ/view?usp=sharing)
 
 
 
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
-、
