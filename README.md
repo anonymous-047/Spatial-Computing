@@ -57,5 +57,5 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 - [5 inputs 1 output logic result](https://drive.google.com/file/d/1gC_lEHDxMGpLRobRxAUgQKVWXsBEIEtQ/view?usp=sharing)
 
 
-
+![current result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/fc330ed58a3eb4da287eff2363bf066efeb9dbb7/Result/%E6%88%AA%E5%B1%8F2022-09-01%2016.58.19.png)
 
