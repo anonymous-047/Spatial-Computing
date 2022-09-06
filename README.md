@@ -56,6 +56,6 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 - [4 inputs 3 outputs int result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/d040073ca119ac057f7bebdf5d111b9d1ba9c7f6/Result/4%20input%202%20or%20int%20result.npy)
 - [5 inputs 1 output logic result](https://drive.google.com/file/d/1gC_lEHDxMGpLRobRxAUgQKVWXsBEIEtQ/view?usp=sharing)
 
-
+The blue bars on the graph below are the results with our approach.
 ![current result](https://github.com/Enbo-Lyu/Spatial-Computing/blob/1cf87f420a1ad1314669a15cb79d515d1585012b/Result/%E6%88%AA%E5%B1%8F2022-09-05%2015.41.35.png)
 
