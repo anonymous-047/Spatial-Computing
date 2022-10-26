@@ -47,6 +47,8 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 - * Split the data into chunks to avoid running out of memory
 - * Run the program in several branches in parallel to save time
 
+## Combination of Activation functions
+- [code](https://github.com/Enbo-Lyu/Spatial-Computing/blob/3da52c529a1f7fcb475e84894e82fb0581ec31af/result_bar_chart.py)
 
 
 ## Result data
