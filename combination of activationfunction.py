@@ -212,67 +212,6 @@ def orderfun(obj, subitem):
                 return False
             return True
 
-# -------------original------------------------
- 
-# def threshold1(array_order, threshold):
-#     result = 1*np.greater(array_order, threshold)
-#     return result
-
-# def threshold2(array_order, threshold):
-#     result = 1*np.greater_equal(array_order, threshold)
-#     return result
-
-# def all_threshold(array_order):
-#     list_re = []
-#     len = array_order.shape[1]
-#     for i in range(len):
-#         result1 = threshold1(array_order, i)
-#         result2 = threshold2(array_order, i)
-#         result = np.concatenate((result1, result2), axis = 0)
-#         result = del_same(result)
-#         list_re.append(result)
-#     list_re = [item for sublist in list_re for item in sublist]
-#     list_re = del_same(list_re) 
-#     array_re = np.array(list_re)
-#     return array_re
-
-# def bandpass1(array_order, left, right):
-#     result = 1*np.logical_and(array_order>=left, array_order<=right)
-#     return result
-
-# def bandpass2(array_order, left, right):
-#     result = 1*np.logical_and(array_order>left, array_order<right)
-#     return result
-
-# def all_bandpass(array_order):
-#     list_re = []
-#     len = array_order.shape[1]
-#     for i in range(len-1):
-#         for j in range(i,len):
-#             result1 = bandpass1(array_order, i, j)
-#             result2 = bandpass2(array_order, i, j)
-#             result = np.concatenate((result1,result2),axis = 0)
-#             result = del_same(result)
-#             list_re.append(result)
-#     list_re = [item for sublist in list_re for item in sublist]
-#     list_re = del_same(list_re) 
-#     array_re = np.array(list_re)
-#     return array_re
-
-# def all_bandpass2(array_order):
-#     list_re = []
-#     len = array_order.shape[1]
-#     for i in range(len):
-#         for j in range(i,len):
-#             result1 = bandpass1(array_order, i, j)
-#             result2 = bandpass2(array_order, i, j)
-#             result = np.concatenate((result1,result2),axis = 0)
-#             result = del_same(result)
-#             list_re.append(result)
-#     list_re = [item for sublist in list_re for item in sublist]
-#     list_re = del_same(list_re) 
-#     array_re = np.array(list_re)
-#     return array_re
 
 def threshold1(array_order, threshold):
     result = 1*np.greater(array_order, threshold)
