@@ -48,7 +48,7 @@ Eg: start the Queue with [‘a’], then all the order in this branch will start
 - * Run the program in several branches in parallel to save time
 
 ## Combination of Activation functions
-- [code](https://github.com/Enbo-Lyu/Spatial-Computing/blob/3da52c529a1f7fcb475e84894e82fb0581ec31af/result_bar_chart.py)
+- [code](https://github.com/Enbo-Lyu/Spatial-Computing/blob/508767c1209f8e6be798b837cf496e4c827e0896/combination%20of%20activationfunction.py)
 
 
 ## Result data
